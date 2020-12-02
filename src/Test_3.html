@@ -10,6 +10,30 @@
 <p>Number<small>(整数或者是小数，或者是科学计数(e))</small>,String<small>(单引号或双引号)</small>,Array,Object, Function</p>
 <h6><strong>变量用于存储数据值,使用var定义变量:</strong></h6>
 <br>
-
+<button type="button" onclick="personInfo()">获取person</button>
+<br>
+<p id="persion_info">person:</p>
+<script>
+    var person = {name:"liming", age:21, email:"84247@gmail.com"
+        ,add:function (){
+        return 3+5;
+        }
+    }
+    function personInfo(){
+        var info = ""
+        for (var p in person){
+            if (info != null && info != ""){
+                info += "\n"
+            }
+            if (typeof person[p] == 'function'){
+                // info += "add():"+person[p].add();
+            }else {
+                info += p+":"+person[p]
+            }
+        }
+        item = document.getElementById("persion_info")
+        item.innerText = "person:\n"+info
+    }
+</script>
 </body>
 </html>

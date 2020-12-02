@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test4</title>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-4</h1>
+<button type="button"
+        onchange="mOperate('change')"
+        onclick="mOperate('click')"
+        onmouseover="mOperate('mouseover')"
+        onmouseout="mOperate('mouseout')"
+        onkeydown="mOperate('keydown')"
+        onload="mOperate('load')"
+        onmousedown="mOperate('mousedown')"
+        onmouseup="mOperate('mouseup')"
+        onmousemove="mOperate('mousemove')"
+        onmouseenter="mOperate('mouseenter')"
+        onmouseleave="mOperate('mouseleave')"
+>事件</button>
+<p id="operate">operate:</p>
+<br>
+<p id="person">person</p>
+<script>
+    var op = document.getElementById("operate")
+    function mOperate(cha){
+        op.innerText = "operate: "+cha
+    }
+    var per = document.getElementById("person")
+    per.innerText = 'person: '+per.innerText.split("")
+</script>
+<br>
+</body>
+</html>
