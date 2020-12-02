@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60423f50-670e-4e10-8e81-ca8f10b2d531" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test_2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test_2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +73,7 @@
       <workItem from="1606638957594" duration="5679000" />
       <workItem from="1606876753779" duration="33000" />
       <workItem from="1606876802513" duration="2091000" />
+      <workItem from="1606889335861" duration="1679000" />
     </task>
     <servers />
   </component>
@@ -90,6 +90,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

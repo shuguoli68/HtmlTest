@@ -16,12 +16,20 @@
 <script>
     document.write("<h6>script 标题6</h6>")
     document.write("<p>script 段落</p>")
-    function changeText(){
+    function changeText() {
         t = document.getElementById("te")
-        t.innerHTML = "2、text2"
+        if (t.innerHTML.match("text1")) {
+            t.innerHTML = "2、text2"
+        }else {
+            t.innerHTML = "1、text1"
+        }
+    }
+    function showDate(){
+        document.write(Date())
     }
 </script>
 <br>
 <button type="button" onclick="alert('点击了按钮')">点击</button>
+<button type="button" onclick="showDate()">显示时间</button>
 </body>
 </html>
