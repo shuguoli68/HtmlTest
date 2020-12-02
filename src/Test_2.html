@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test2</title>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-2</h1>
+<br>
+<p>JavaScript能够直接写入HTML输出流中</p>
+<p>
+    只能在 HTML 输出流中使用<strong>document.write</strong>。 如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档
+</p>
+<p id="te">1、text1</p>
+<button type="button" onclick="changeText()">更改</button>
+<script>
+    document.write("<h6>script 标题6</h6>")
+    document.write("<p>script 段落</p>")
+    function changeText(){
+        t = document.getElementById("te")
+        t.innerHTML = "2、text2"
+    }
+</script>
+<br>
+<button type="button" onclick="alert('点击了按钮')">点击</button>
+</body>
+</html>
