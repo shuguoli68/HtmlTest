@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test5</title>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-5</h1>
+<p>JavaScript闭包：</p>
+<p id="count1">count:0</p>
+<button type="button" onclick="click1()">增加</button>
+<script>
+    var add = (function () {
+        var count = 0
+        return function (){
+            return ++count
+        }
+    })()
+    function click1() {
+        var count1 = document.getElementById("count1")
+        count1.innerText = "count:"+add()
+    }
+</script>
+</body>
+</html>
