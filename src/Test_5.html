@@ -13,6 +13,7 @@
 <br>
 <hr>
 <h3 style="text-align: center">Date相关</h3>
+<button type="button" onclick="createList()">查看</button>
 <div id="time_list"></div>
 <script>
     var add = (function () {
@@ -48,13 +49,14 @@
     }
 
     function createList() {
-        var mList = ["",""]
+        var mList = ["yyyy-MM-dd hh:mm:ss","yyyy年MM月dd日hh小时mm分ss秒"]
         var timeList = document.getElementById("time_list")
         var ul = document.createElement("ul")
         timeList.appendChild(ul)
-        for (var item in mList){
+        var now = new Date()
+        for (item in mList){
             var li = document.createElement("li")
-            li.innerText = item
+            li.innerText = now.format(mList[item])
             ul.appendChild(li)
         }
     }
