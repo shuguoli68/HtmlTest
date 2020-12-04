@@ -9,12 +9,32 @@
 <div>
     <button type="button" onclick="withAndHeight()">获取窗口宽高</button>
     <p id="winWH"></p>
+    <button type="button" onclick="opWindow(1)">收缩窗口</button>
+    <button type="button" onclick="opWindow(2)">移动窗口</button>
+    <button type="button" onclick="opWindow(3)">打开新窗口</button>
+    <button type="button" onclick="opWindow(4)">关闭当前窗口</button>
 </div>
 <script>
     function withAndHeight() {
         var wi = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
         var he = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight
         document.getElementById("winWH").innerText = "宽度："+wi+",高度："+he
+    }
+    function opWindow(tag) {
+        switch (tag) {
+            case "1":
+                window.resizeTo(300, 300)
+                break
+            case "2":
+                window.moveTo(100, 1000)
+                break
+            case "3":
+                window.open("https://www.baidu.com")
+                break
+            default:
+                window.close()
+                break
+        }
     }
 </script>
 </body>
