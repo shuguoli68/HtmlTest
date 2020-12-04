@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test6</title>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-6</h1>
+<div>
+    <button type="button" onclick="withAndHeight()">获取窗口宽高</button>
+    <p id="winWH"></p>
+</div>
+<script>
+    function withAndHeight() {
+        var wi = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+        var he = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight
+        document.getElementById("winWH").innerText = "宽度："+wi+",高度："+he
+    }
+</script>
+</body>
+</html>
