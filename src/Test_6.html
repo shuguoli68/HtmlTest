@@ -9,6 +9,7 @@
 <div>
     <button type="button" onclick="withAndHeight()">获取窗口宽高</button>
     <p id="winWH"></p>
+    <p id="availWH"></p>
     <button type="button" onclick="opWindow(1)">收缩窗口</button>
     <button type="button" onclick="opWindow(2)">移动窗口</button>
     <button type="button" onclick="opWindow(3)">打开新窗口</button>
@@ -18,7 +19,11 @@
     function withAndHeight() {
         var wi = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
         var he = window.innerHeight || document.documentElement.clientWidth || document.body.clientHeight
-        document.getElementById("winWH").innerText = "宽度："+wi+",高度："+he
+        document.getElementById("winWH").innerText = "浏览器窗口宽度："+wi+",高度："+he
+
+        var vW = window.screen.availWidth
+        var vH = window.screen.availHeight
+        document.getElementById("availWH").innerText = "屏幕可用宽度："+vW+",高度："+vH
     }
     function opWindow(tag) {
         switch (tag) {
