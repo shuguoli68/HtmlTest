@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test8</title>
+</head>
+<body onload="coolieList()">
+<h1 style="text-align: center">HTML复习历程-8</h1>
+<p><strong>Cookie:</strong><br>Cookie 用于存储 web 页面的用户信息, 以名/值对形式存储。</p>
+<p>JavaScript 可以使用 document.cookie 属性来创建 、读取、及删除 cookie。</p>
+<p>Cookie: "username=John Smith; expires=Thu, 18 Dec 2043 12:00:00 GMT; path=/"</p>
+<div>
+    <p>设置cookie:</p>
+    <input id="name" name="name:" type="text">
+    <input id="value" name="value:" type="text">
+    <input id="expire" name="expire:" type="number">
+    <button type="button" onclick="setCookie()">保存</button>
+</div>
+<div>
+    <p>精准查找cookie:</p>
+    <input id="check" name="name:" type="text">
+    <button type="button" onclick="getCookie()">查找</button>
+</div>
+<br>
+<div>
+    <button type="button" onclick="coolieList()">刷新</button>
+    <div id="cookie_list"></div>
+</div>
+
+<script>
+    function setCookie() {
+        var cname = document.getElementById("name")
+        var cvalue = document.getElementById("value")
+        var exdays = document.getElementById("expire")
+        if (cname.value.length<1){
+            alert("请先输入name")
+        }else if (cvalue.value.length<1){
+            alert("请先输入value")
+        }else if (exdays.value.length<1){
+            alert("请先输入expire")
+        }else {
+            var d = new Date()
+            d.setTime(d.getTime() + exdays.value*24*60*60*1000)
+            document.cookie = cname.value + "=" + cvalue.value +"; expires=" + d.toUTCString()
+            alert("保存成功")
+            cname.innerText = ""
+            cvalue.innerText = ""
+            exdays.innerText = ""
+        }
+    }
+    function getCookie() {
+        var cname = document.getElementById("check")
+        if (cname.value.length<1){
+            alert("请先输入name")
+        }else {
+            var name = cname.value + "="
+            var ca = document.cookie.split("; ")
+            for (i in ca) {
+                var c = ca[i]
+                if (c.indexOf(name) == 0) {
+                    cname.innerText = c.substring(name.length, c.length)
+                    return
+                }
+            }
+        }
+        cname.innerText = null
+    }
+    function coolieList() {
+        var root = document.getElementById("cookie_list")
+        var ul = document.createElement("ul")
+        root.appendChild(ul)
+        var arrCookie = document.cookie.split("; ")
+        for (i in arrCookie){
+            var arr = arrCookie[i].split("=")
+            var li = document.createElement("li")
+            li.innerText = arr[0] + ":" + arr[1]
+            ul.appendChild(li)
+        }
+    }
+</script>
+</body>
+</html>
