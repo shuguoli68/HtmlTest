@@ -14,6 +14,12 @@
     <button type="button" onclick="opWindow(2)">移动窗口</button>
     <button type="button" onclick="opWindow(3)">打开新窗口</button>
     <button type="button" onclick="opWindow(4)">关闭当前窗口</button>
+    <br>
+    <hr>
+    <button type="button" onclick="winLoc()">Window Location</button>
+    <p id="winLoc"></p>
+    <button type="button" onclick="newDoc(0)">页面覆盖</button>
+    <button type="button" onclick="newDoc(1)">页面替换</button>
 </div>
 <script>
     function withAndHeight() {
@@ -39,6 +45,18 @@
             default:
                 window.close()
                 break
+        }
+    }
+    function winLoc() {
+        var winL = document.getElementById("winLoc")
+        winL.innerText = "web协议："+location.protocol+"\nhostname:"+location.hostname
+            +"\npathname:"+location.pathname+"\n"+location.port+"\nhref:"+location.href
+    }
+    function newDoc(tag) {
+        if (0 == tag){
+            window.location.assign("https://www.baidu.com")
+        }else {
+            window.location.replace("https://www.baidu.com")
         }
     }
 </script>
