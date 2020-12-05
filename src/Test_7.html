@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test7</title>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-7</h1>
+<p>弹窗：</p>
+<button type="button" onclick="showAlert(0)">警告框</button>
+<button type="button" onclick="showAlert(1)">确认框</button>
+<button type="button" onclick="showAlert(2)">提示框</button>
+<p id="op_click">点击的效果</p>
+<br>
+<hr>
+<p>计时事件：</p>
+<p>setInterval()-间隔指定的毫秒数不停地执行指定的代码</p>
+<p>setTimeOut()-在指定的毫秒数后执行指定的代码</p>
+<button type="button" onclick="startStop(0)">开始</button>
+<button type="button" onclick="startStop(1)">暂停</button>
+<P id="st_1">0</P>
+<P id="st_2">0000</P>
+
+<script>
+    function showAlert(tag) {
+        if (0 == tag){
+            alert("这是一个警告框！")
+        }else if (1 == tag){
+            var r = confirm("你真的确定吗？")
+            document.getElementById("op_click").innerText = r?"点击了确定按钮":"点击了取消按钮"
+        }else {
+            var p = prompt("请输入姓名：", "默认值")
+            document.getElementById("op_click").innerText = p.length>0?"输入的姓名为："+p:"点击了取消"
+        }
+    }
+    var count = 0
+    var myTime = null
+    function showTime() {
+        document.getElementById("st_1").innerText = ++count
+        document.getElementById("st_2").innerText = new Date().toLocaleTimeString()
+    }
+    function startStop(tag) {
+        if (myTime != null){
+            clearInterval(myTime)
+        }
+        if (tag == 0){
+            count = 0
+            myTime = setInterval(function () {
+                showTime()
+            }, 1000)
+        }
+    }
+</script>
+</body>
+</html>
