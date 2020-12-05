@@ -20,6 +20,8 @@
 <button type="button" onclick="startStop(1)">暂停</button>
 <P id="st_1">0</P>
 <P id="st_2">0000</P>
+<button type="button" onclick="spTimeOut(0)">3秒弹窗</button>
+<button type="button" onclick="spTimeOut(1)">取消3秒弹窗</button>
 
 <script>
     function showAlert(tag) {
@@ -35,6 +37,7 @@
     }
     var count = 0
     var myTime = null
+    var timeout = null
     function showTime() {
         document.getElementById("st_1").innerText = ++count
         document.getElementById("st_2").innerText = new Date().toLocaleTimeString()
@@ -48,6 +51,16 @@
             myTime = setInterval(function () {
                 showTime()
             }, 1000)
+        }
+    }
+    function spTimeOut(tag) {
+        if (timeout != null){
+            clearTimeout(timeout)
+        }
+        if (tag == 0){
+            timeout = setTimeout(function () {
+                alert("3秒已到")
+            }, 3000)
         }
     }
 </script>
