@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Title12</title>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
 </head>
 <body>
 <h1 style="text-align: center">HTML复习历程-12</h1>
 <div id="app">
     <p>{{msg}}</p>
+    <p>{{strDescription()}}</p>
 </div>
-<script>
+<div id="base_vue">
+    <h3>Vue.js 模板语法</h3>
+    <p><strong>文本：</strong>数据绑定最常见的形式就是使用 {{}}（双大括号）的文本插值</p>
+    <p><strong>html:</strong></p>
+    <div v-html="pStr"></div>
+</div>
+<script type="text/javascript">
     new Vue({
         el:"#app",
         data:{
+            my_name:"ming",
             msg:"Hello Vue !"
+        },
+        methods:{
+            strDescription:function (){
+                return "Hello,"+this.my_name+",welcome to Vue's world"
+            }
+        }
+    })
+
+    new Vue({
+        el:"#base_vue",
+        data: {
+            pStr:'<p>使用 v-html 指令用于输出 html 代码</p>',
         }
     })
 </script>
