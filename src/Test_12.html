@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-model="http://www.w3.org/1999/xhtml"
+      xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title12</title>
@@ -18,11 +19,44 @@
     <p><strong>html:</strong></p>
     <div v-html="pStr"></div>
     <br>
-    <label for="r1">修改颜色</label><input type="checkbox" v-model="isChecked" id="r1">
-    <br><br>
+    <input type="checkbox" v-model="isChecked">
     <div v-bind:class="{'class1': isChecked}">
         v-bind:class 指令
     </div>
+    <p>Vue.js 都提供了完全的 JavaScript 表达式支持</p>
+    <p>3+2=</p>{{3+2}}
+    <br>
+    <br>
+    <p>v-if 指令</p>
+    <input type="checkbox" v-model="isOk">
+    <p v-if="isOk">isOk是true</p>
+    <br>
+    <br>
+    <p>v-model 指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。</p>
+    <input v-model="my_input">
+    <p>{{my_input}}</p>
+    <br>
+    <br>
+    <p>按钮的事件我们可以使用 v-on 监听事件</p>
+    <button type="button" v-on:click="reverWord()">反转字符串</button>
+    <p>{{msg}}</p>
+    <br>
+    <br>
+    v-bind 缩写
+    <p>
+        <!-- 完整语法 --><br>
+        a v-bind:href="url"<br>
+        <!-- 缩写 --><br>
+        a :href="url"
+    </p>
+    <br>
+    v-on 缩写
+    <p>
+        <!-- 完整语法 --><br>
+        a v-on:click="doSomething"<br>
+        <!-- 缩写 --><br>
+        a @click="doSomething"
+    </p>
 </div>
 <script type="text/javascript">
     new Vue({
@@ -43,6 +77,14 @@
         data: {
             pStr:'<p>使用 v-html 指令用于输出 html 代码</p>',
             isChecked:false,
+            isOk:true,
+            my_input:"input any word",
+            msg:"abcde"
+        },
+        methods: {
+            reverWord:function () {
+                this.msg = this.msg.split('').reverse().join('')
+            }
         }
     })
 </script>
