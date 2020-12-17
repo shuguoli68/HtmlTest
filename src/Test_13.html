@@ -33,6 +33,12 @@
                 {{mem.name+'；'+mem.age}}
             </li>
         </ol>
+        <br>
+        <ul>
+            <li v-for="(value,key,index) in link">
+                {{index}};{{key}};{{value}}
+            </li>
+        </ul>
     </div>
 </div>
 <script type="text/javascript">
@@ -45,7 +51,12 @@
                 {name:"baidu", age:10},
                 {name:"alibaba", age:11},
                 {name:"tencent", age:12},
-            ]
+            ],
+            link:{
+                id:"26956",
+                title:"百度链接",
+                url:"www.baidu.com"
+            }
         },
         methods:{
             radioIndex(tag){
