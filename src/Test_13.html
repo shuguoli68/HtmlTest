@@ -25,7 +25,15 @@
         <input type="checkbox" name="是否显示" v-model="isShow">
         <p v-show="isShow">true</p>
     </div>
-
+    <br>
+    <div>
+        <p>v-for</p>
+        <ol>
+            <li v-for="mem in members">
+                {{mem.name+'；'+mem.age}}
+            </li>
+        </ol>
+    </div>
 </div>
 <script type="text/javascript">
     new Vue({
@@ -33,6 +41,11 @@
         data:{
             index:"0",
             isShow:true,
+            members:[
+                {name:"baidu", age:10},
+                {name:"alibaba", age:11},
+                {name:"tencent", age:12},
+            ]
         },
         methods:{
             radioIndex(tag){
