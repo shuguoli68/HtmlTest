@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test13</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-13</h1>
+<div id="app">
+    <div>
+        <p>v-if、v-else-if、v-else</p>
+        <br>
+        <div>
+            高<input type="radio" checked name="r_index" v-on:click="radioIndex('0')">
+            中<input type="radio" name="r_index" v-on:click="radioIndex('1')">
+            低<input type="radio" name="r_index" v-on:click="radioIndex('2')">
+        </div>
+        <p>{{index}}</p>
+        <div>
+            <p v-if="index=='0'">高级</p>
+            <p v-else-if="index=='1'">中级</p>
+            <p v-else>低级</p>
+        </div>
+        <input type="checkbox" name="是否显示" v-model="isShow">
+        <p v-show="isShow">true</p>
+    </div>
+
+</div>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            index:"0",
+            isShow:true,
+        },
+        methods:{
+            radioIndex(tag){
+                this.index = tag
+            }
+        }
+    })
+</script>
+</body>
+</html>
