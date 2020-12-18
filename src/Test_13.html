@@ -40,6 +40,14 @@
             </li>
         </ul>
     </div>
+    <br>
+    <div>
+        <p>计算属性computed,属性的getter</p>
+        <p>msg:{{msg}}</p>
+        <p>reverMsg:{{reverMsg}}</p>
+        <p>【注】computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。</p>
+        <p>可以说使用 computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性。</p>
+    </div>
 </div>
 <script type="text/javascript">
     new Vue({
@@ -56,11 +64,18 @@
                 id:"26956",
                 title:"百度链接",
                 url:"www.baidu.com"
-            }
+            },
+            msg:"abcde"
         },
         methods:{
             radioIndex(tag){
                 this.index = tag
+            }
+        },
+        computed:{
+            //计算属性的getter
+            reverMsg:function () {
+                return this.msg.split('').reverse().join('')
             }
         }
     })
