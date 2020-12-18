@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test16</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-16</h1>
+<div id="app">
+    <input v-model="mInput">
+    <br>
+    <mySpan v-bind:msg="mInput"></mySpan>
+</div>
+<script type="text/javascript">
+    Vue.component('mySpan', {
+        props: ['msg'],
+        template: '<span>{{ msg }}</span>'
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            mInput: ''
+        }
+    })
+</script>
+</body>
+</html>
