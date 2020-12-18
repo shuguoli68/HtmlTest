@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test15</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-15</h1>
+<div id="app">
+    <p>单行、多行输入v-model</p>
+    <input v-model="simple" placeholder="单行输入">
+    <p>{{simple}}</p>
+    <textarea v-model="multi" placeholder="多行输入"></textarea>
+    <p>{{multi}}</p>
+    <br>
+    <p>单选、多选v-model</p>
+    <input type="radio" value="yes" v-model="simpleCheck">是
+    <input type="radio" value="no" v-model="simpleCheck">否
+    <p>{{simpleCheck}}</p>
+    <input type="checkbox" value="taobao" v-model="multiCheck">淘宝
+    <input type="checkbox" value="tianmao" v-model="multiCheck">天猫
+    <input type="checkbox" value="jingdong" v-model="multiCheck">京东
+    <input type="checkbox" value="pinduoduo" v-model="multiCheck">拼多多
+    <P>{{multiCheck}}</P>
+    <br>
+    <select v-model="mIndex">
+        <option value="">选择一个地址</option>
+        <option value="湖北">鄂</option>
+        <option value="浙江">浙</option>
+        <option value="河北">翼</option>
+        <option value="福建">闽</option>
+        <option value="山东">鲁</option>
+    </select>
+    <p>{{mIndex}}</p>
+</div>
+<script type="text/javascript">
+    new Vue({
+        el:"#app",
+        data:{
+            simple:"",
+            multi:"",
+            simpleCheck:"",
+            multiCheck:[],
+            mIndex:"",
+        }
+    })
+</script>
+</body>
+</html>
