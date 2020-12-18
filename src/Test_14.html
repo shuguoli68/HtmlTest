@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test14</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-14</h1>
+<div id="app">
+    <p> Vue.js 监听属性 watch，我们可以通过 watch 来响应数据的变化。</p>
+    <br>
+    <button type="button" @click="++count">点击计数</button>
+    <P>{{count}}</P>
+    <p>{{msg}}</p>
+
+    <br>
+    <p>单位换算：</p>
+    千米<input type="number" v-model="km">
+    米<input type="number" v-model="m">
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            count:1,
+            msg:"点击按钮计数",
+            km:1,
+            m:1000
+        },
+        watch:{
+            km:function (val) {
+                this.km = val
+                this.m = val * 1000
+            },
+            m:function (val) {
+                this.m = val
+                this.km = val / 1000
+            }
+        }
+    })
+    vm.$watch("count", function (nval, oval) {
+        this.msg = "之前："+oval+",现在："+nval
+    })
+</script>
+</body>
+</html>
