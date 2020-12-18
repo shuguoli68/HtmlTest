@@ -11,13 +11,16 @@
 <div id="app1">
     <p>{{result1}}</p>
 </div>
+<div id="app2">
+    <p>{{result2}}</p>
+</div>
 <script type="text/javascript">
     new Vue({
         el:"#app1",
         data(){
             return {
                 result1:""
-            }
+            };
         },
         mounted(){
             axios
@@ -34,6 +37,27 @@
                 this.result1 = response
                 )
             )
+            .catch(function (error) {
+                console.log(error)
+            })
+        }
+    })
+    new Vue({
+        el:"#app2",
+        data() {
+            return {
+                result2:""
+            };
+        },
+        mounted() {
+            axios
+            .post('https://www.runoob.com/try/ajax/demo_axios_post.php'
+                /*,{//传递参数
+                id:12345,
+                    name:"li"
+                }*/
+            )
+            .then(response => (this.result2 = response))
             .catch(function (error) {
                 console.log(error)
             })
