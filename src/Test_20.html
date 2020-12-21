@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test20</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <style>
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-20</h1>
+<div id="app">
+    <p>{{isLoad}}</p>
+    <div class="ui segment" v-bind:class="{'active':isLoad}">
+        <div class="ui active dimmer">
+            <div class="ui text loader">加载中</div>
+        </div>
+        <p></p>
+    </div>
+    <button type="button" @click="changeLoad()">切换</button>
+</div>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            isLoad:true,
+        },
+        methods:{
+            changeLoad(){
+                this.isLoad = !this.isLoad
+            }
+        }
+    })
+</script>
+</body>
+</html>
