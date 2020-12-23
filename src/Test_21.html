@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test21</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js">
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-21</h1>
+<div id="app">
+    <p>jquery练习</p>
+    <p>点击事件</p>
+    <span>点我隐藏1</span>
+    <br>
+    <span>点我隐藏2</span>
+    <br>
+</div>
+<script>
+    $(document).ready(function () {
+        $("span").click((function () {
+            $(this).hide()
+        }))
+    })
+</script>
+</body>
+</html>
