@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test21</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js">
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-23</h1>
+<div id="app">
+    <p>jquery效果</p>
+    <div>
+        <p>1、显示-隐藏</p>
+        <p class="show-hide">当前状态：显示-隐藏</p>
+        <button class="show">显示</button>
+        <button class="hide">隐藏</button>
+    </div>
+    <br>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $("button.show").click((function () {
+            $("p.show-hide").show()
+        }))
+        $("button.hide").click((function () {
+            $("p.show-hide").hide()
+        }))
+    })
+</script>
+</body>
+</html>
