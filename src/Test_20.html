@@ -24,6 +24,51 @@
         <p></p>
     </div>
     <button type="button" @click="changeLoad()">切换</button>
+
+    <br>
+    <p>popup弹窗</p>
+    <div class="ui button">Show flowing popup</div>
+    <div class="ui flowing popup top left transition hidden">
+        <div class="ui three column divided center aligned grid">
+            <div class="column">
+                <h4 class="ui header">Basic Plan</h4>
+                <p><b>2</b> projects, $10 a month</p>
+                <div class="ui button">选择</div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Business Plan</h4>
+                <p><b>5</b> projects, $20 a month</p>
+                <div class="ui button">选择</div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Premium Plan</h4>
+                <p><b>8</b> projects, $25 a month</p>
+                <div class="ui button">选择</div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <p>进度条</p>
+    <div class="ui progress">
+        <div class="bar">
+            <div class="mini progress">0%</div>
+        </div>
+        <div class="label">上传文件</div>
+    </div>
+
+    <br>
+    <p>评价</p>
+    <div class="ui rating" data-max-rating="3" data-rating="3"></div>
+
+    <br>
+    <p>搜索</p>
+    <div class="ui search">
+        <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="search...">
+            <i class="search icon"></i>
+        </div>
+    </div>
 </div>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
 <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
