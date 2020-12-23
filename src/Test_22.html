@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test21</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js">
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-22</h1>
+<div id="app">
+    <p>jquery事件</p>
+    <span>点我隐藏1</span>
+    <br>
+    <span>点我隐藏2</span>
+    <br>
+    <br>
+    <br>
+
+    click()<p>当按钮点击事件被触发时会调用</p><br>
+    dblclick()<p>当双击元素时，会发生 dblclick 事件</p><br>
+    mouseenter()<p>当鼠标指针穿过元素时，会发生 mouseenter 事件</p><br>
+    mouseleave()<p>当鼠标指针离开元素时，会发生 mouseleave 事件</p><br>
+    mousedown()<p>当鼠标指针移动到元素上方，并按下鼠标按键时，会发生 mousedown 事件</p><br>
+    mouseup()<p>当在元素上松开鼠标按钮时，会发生 mouseup 事件</p><br>
+    hover()<p>模拟光标悬停事件</p><br>
+    focus()<p>当元素获得焦点时，发生 focus 事件</p><br>
+    blur()<p>当元素失去焦点时，发生 blur 事件</p><br>
+</div>
+<script>
+    $(document).ready(function () {
+        $("span").click((function () {
+            $(this).hide()
+        }))
+    })
+</script>
+</body>
+</html>
