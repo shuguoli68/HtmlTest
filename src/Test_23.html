@@ -36,6 +36,14 @@
         <div id="slide_up_down" style="padding: 50px;display: none;background-color: #5cb85c;width: 200px">Hello jQuery !</div>
         <button id="slide">点我滑动</button>
     </div>
+    <br>
+    <div>
+        <p>4、动画</p>
+        <div id="ani" style="padding: 10px;display: block;background-color: #5cb85c;width: 100px;height: 100px"></div>
+        <br>
+        <button id="ani_1">动画1</button>
+        <button id="ani_2">动画2</button>
+    </div>
 </div>
 <script>
     $(document).ready(function () {
@@ -55,6 +63,22 @@
         //滑动
         $("#slide").click(function () {
             $("#slide_up_down").slideToggle()
+        })
+        //动画
+        $("#ani_1").click(function () {
+            $("#ani").animate({
+                left:"250px",
+                opacity:"0.5",
+                height:"200px",
+                width:"200px"
+            })
+        })
+        $("#ani_2").click(function () {
+            $("#ani").animate({
+                left:"-=50px",
+                height:"-=50px",
+                width:"-=50px"
+            })
         })
     })
 </script>
