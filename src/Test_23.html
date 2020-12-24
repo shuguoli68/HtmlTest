@@ -14,6 +14,7 @@
 <h1 style="text-align: center">HTML复习历程-23</h1>
 <div id="app">
     <p>jquery效果</p>
+    <br>
     <div>
         <p>1、显示-隐藏</p>
         <p class="show-hide">当前状态：显示-隐藏</p>
@@ -21,16 +22,40 @@
         <button class="hide">隐藏</button>
     </div>
     <br>
-
+    <div>
+        <p>2、淡入淡出</p>
+        <div id="in_out_1" style="width: 100px;height: 100px;background-color: red"></div>
+        <div id="in_out_2" style="width: 100px;height: 100px;background-color: blue"></div>
+        <div id="in_out_3" style="width: 100px;height: 100px;background-color: green"></div>
+        <br>
+        <button id="in_out">淡入/淡出</button>
+    </div>
+    <br>
+    <div>
+        <p>3、滑动</p>
+        <div id="slide_up_down" style="padding: 50px;display: none;background-color: #5cb85c;width: 200px">Hello jQuery !</div>
+        <button id="slide">点我滑动</button>
+    </div>
 </div>
 <script>
     $(document).ready(function () {
+        //显示隐藏
         $("button.show").click((function () {
             $("p.show-hide").show()
         }))
         $("button.hide").click((function () {
             $("p.show-hide").hide()
         }))
+        //淡入淡出
+        $("#in_out").click((function () {
+            $("#in_out_1").fadeToggle()
+            $("#in_out_2").fadeToggle("slow")
+            $("#in_out_3").fadeToggle(3000)
+        }))
+        //滑动
+        $("#slide").click(function () {
+            $("#slide_up_down").slideToggle()
+        })
     })
 </script>
 </body>
