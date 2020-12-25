@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test21</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js">
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">HTML复习历程-25</h1>
+<div id="app">
+    <p>jquery 添加\删除元素</p>
+    <br>
+    <div>
+        <p>1、添加</p>
+        <ul>
+            <li>append() - 在被选元素的结尾插入内容</li>
+            <li>prepend() - 在被选元素的开头插入内容</li>
+            <li>after() - 在被选元素之后插入内容</li>
+            <li>before() - 在被选元素之前插入内容</li>
+        </ul>
+        <p id="show"><strong>捕获：</strong>操作 DOM 的能力</p>
+        <input id="input" value="liming" placeholder="请输入...">
+        <br>
+        <br>
+        <button class="show1">text</button>
+        <button class="show2">html</button>
+        <button class="show3">val</button>
+        <button class="show4">attr</button>
+        <p id="result1"></p>
+    </div>
+    <br>
+
+</div>
+<script>
+    $(document).ready(function () {
+        $("button.show1").click(function () {
+            alert($("#show").text())
+        })
+        $("button.show2").click(function () {
+            alert($("#show").html())
+        })
+        $("button.show3").click(function () {
+            alert($("#input").val())
+        })
+        $("button.show4").click(function () {
+            alert($("#input").attr("placeholder"))
+        })
+    })
+</script>
+</body>
+</html>
