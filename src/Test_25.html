@@ -23,15 +23,42 @@
             <li>after() - 在被选元素之后插入内容</li>
             <li>before() - 在被选元素之前插入内容</li>
         </ul>
-        <p id="show"><strong>捕获：</strong>操作 DOM 的能力</p>
-        <input id="input" value="liming" placeholder="请输入...">
+        <p id="show">添加元素</p>
+        <br>
+        <button class="show1">append</button>
+        <button class="show2">prepend</button>
+        <button class="show3">after</button>
+        <button class="show4">before</button>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+        <p>2、删除</p>
+        <ul>
+            <li>remove() - 删除被选元素（及其子元素）</li>
+            <li>empty() - 从被选元素中删除子元素</li>
+        </ul>
+        <div id="del1" style="background-color: #5cb85c; width: 100px;height: 100px">
+            <P class="del1_text1">一个文本</P>
+            <P class="del1_text2">另一个文本</P>
+        </div>
+        <br>
+        <div id="del2" style="background-color: #5cb85c; width: 100px;height: 100px">
+            <P class="del2_text1">一个文本</P>
+            <P class="del2_text2">另一个文本</P>
+        </div>
+        <br>
+        <div id="del3" style="background-color: #5cb85c; width: 100px;height: 100px">
+            <P class="del3_text1">一个文本</P>
+            <P class="del3_text2">另一个文本</P>
+        </div>
         <br>
         <br>
-        <button class="show1">text</button>
-        <button class="show2">html</button>
-        <button class="show3">val</button>
-        <button class="show4">attr</button>
-        <p id="result1"></p>
+        <button id="del_btn_1">remove</button>
+        <button id="del_btn_2">empty</button>
+        <button id="del_btn_3">remove("")</button>
     </div>
     <br>
 
@@ -39,16 +66,26 @@
 <script>
     $(document).ready(function () {
         $("button.show1").click(function () {
-            alert($("#show").text())
+            $("#show").append("<b>结尾添加</b>")
         })
         $("button.show2").click(function () {
-            alert($("#show").html())
+            $("#show").prepend("<b>开头添加</b>")
         })
         $("button.show3").click(function () {
-            alert($("#input").val())
+            $("#show").after("<b>之前添加</b>")
         })
         $("button.show4").click(function () {
-            alert($("#input").attr("placeholder"))
+            $("#show").before("<b>之后添加</b>")
+        })
+
+        $("#del_btn_1").click(function () {
+            $("#del1").remove()
+        })
+        $("#del_btn_2").click(function () {
+            $("#del2").empty()
+        })
+        $("#del_btn_3").click(function () {
+            $("p").remove(".del3_text2")
         })
     })
 </script>
